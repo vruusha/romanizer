@@ -83,13 +83,11 @@ GET /romannumeral?query={number}
 ## 🔧 Configuration
 
 ### Environment Variables
-- `PORT`: Backend server port (default: 3001)
+- `PORT`: Backend server port (default: 3000)
 - `CORS_ORIGIN`: Allowed frontend origin (default: http://localhost:5173)
 
 ### Monitoring Configuration
-- **Prometheus**: Metrics collection every 5 seconds
 - **Sentry**: Error tracking and performance monitoring
-- **Jaeger**: Distributed tracing for request flow analysis
 
 ## 🧪 Testing
 
