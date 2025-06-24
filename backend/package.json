@@ -1,0 +1,29 @@
+{
+  "name": "genstudio-backend",
+  "version": "1.0.0",
+  "description": "Adobe Gen Studio Backend Service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsx index.tsx"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.60.1",
+    "@opentelemetry/exporter-jaeger": "^2.0.1",
+    "@opentelemetry/instrumentation-express": "^0.51.0",
+    "@opentelemetry/instrumentation-http": "^0.202.0",
+    "@opentelemetry/sdk-node": "^0.202.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "winston": "^3.17.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "tsx": "^4.20.3"
+  }
+}

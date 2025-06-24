@@ -1,0 +1,46 @@
+# Docker Compose Configuration for Roman Numeral Converter
+#
+# This configuration sets up a complete development environment with:
+# - Backend API server (Node.js/Express)
+# - Prometheus metrics collection
+# - Grafana dashboard for monitoring
+# - Jaeger distributed tracing
+#
+# @author Interview Candidate
+# @version 1.0.0
+
+version: '3.7'
+
+services:
+  # Backend API Service
+  # Provides the Roman numeral conversion REST API
+  backend:
+    build: ./backend
+    ports:
+      - "3001:3001"  # Expose API on port 3001
+    depends_on:
+      - jaeger  # Ensure Jaeger is available for tracing
+
+  # Prometheus Metrics Service
+  # Collects and stores application metrics for monitoring
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml  # Mount custom config
+    ports:
+      - "9090:9090"  # Prometheus web interface
+
+  # Grafana Dashboard Service
+  # Provides visualization and alerting for metrics
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3002:3000"  # Grafana web interface (mapped to 3002)
+
+  # Jaeger Tracing Service
+  # Distributed tracing system for request flow analysis
+  jaeger:
+    image: jaegertracing/all-in-one:1.22
+    ports:
+      - "16686:16686"  # Jaeger web interface
+      - "14268:14268"  # HTTP collector endpoint
