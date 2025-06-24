@@ -1,23 +1,20 @@
 # Roman Numeral Converter
 
-A full-stack web application that converts Arabic numerals to Roman numerals, built with React frontend and Node.js/Express backend. The project includes comprehensive monitoring, logging, and distributed tracing capabilities.
+A full-stack web application that converts Arabic numerals to Roman numerals, built with a React frontend and Node.js/Express backend. The project includes robust logging and error handling.
 
 ## 🏗️ Architecture
 
 ### Frontend (React + Adobe React Spectrum)
 - **Technology**: React 18 with Adobe React Spectrum UI components
 - **Features**: Form validation, error handling, loading states, responsive design
-- **Monitoring**: Sentry integration for error tracking and performance monitoring
 
 ### Backend (Node.js + Express)
 - **Technology**: Express.js REST API with ES6 modules
 - **Features**: Roman numeral conversion algorithm, input validation, error handling
-- **Monitoring**: Prometheus metrics, Winston logging, OpenTelemetry tracing
+- **Logging**: Winston logging for structured logs
 
 ### Infrastructure
 - **Containerization**: Docker and Docker Compose
-- **Monitoring Stack**: Prometheus + Grafana + Jaeger
-- **Observability**: Distributed tracing, metrics collection, structured logging
 
 ## 🚀 Quick Start
 
@@ -37,9 +34,6 @@ docker-compose up --build
 # Access the application
 # Frontend: http://localhost:5173
 # Backend API: http://localhost:3001
-# Prometheus: http://localhost:9090
-# Grafana: http://localhost:3002
-# Jaeger: http://localhost:16686
 ```
 
 ### Local Development
@@ -50,7 +44,7 @@ npm install
 npm start
 
 # Frontend (in another terminal)
-cd gen-studio-ui
+cd frontend
 npm install
 npm run dev
 ```
@@ -83,13 +77,31 @@ GET /romannumeral?query={number}
 ## 🔧 Configuration
 
 ### Environment Variables
-- `PORT`: Backend server port (default: 3000)
+- `PORT`: Backend server port (default: 3001)
 - `CORS_ORIGIN`: Allowed frontend origin (default: http://localhost:5173)
 
-### Monitoring Configuration
-- **Sentry**: Error tracking and performance monitoring
-
 ## 🧪 Testing
+
+### Frontend Testing
+The frontend uses [Vitest](https://vitest.dev/) and [Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for unit and integration tests.
+
+- **Run all tests:**
+  ```bash
+  cd frontend
+  npm test
+  # or
+  npm run test
+  ```
+- **Run tests with UI:**
+  ```bash
+  npm run test:ui
+  ```
+- **Run tests with coverage report:**
+  ```bash
+  npm run test:coverage
+  ```
+
+Test setup and utilities are in `frontend/src/test/`. See `setup.ts` for global mocks and configuration.
 
 ### Manual Testing
 1. Open http://localhost:5173
@@ -106,17 +118,7 @@ curl "http://localhost:3001/romannumeral?query=42"
 curl "http://localhost:3001/romannumeral?query=0"
 ```
 
-## 📊 Monitoring & Observability
-
-### Metrics (Prometheus)
-- HTTP request rates and latencies
-- Error rates and response codes
-- Custom application metrics
-
-### Tracing (Jaeger)
-- Request flow visualization
-- Performance bottleneck identification
-- Distributed system debugging
+## 📊 Logging
 
 ### Logging (Winston)
 - Structured logging with timestamps
@@ -128,19 +130,17 @@ curl "http://localhost:3001/romannumeral?query=0"
 ```
 adobe-project/
 ├── backend/                 # Express.js API server
-│   ├── index.js            # Main server file
-│   ├── romanService.js     # Roman numeral conversion logic
-│   ├── logger.js           # Winston logger configuration
-│   ├── tracing.js          # OpenTelemetry setup
-│   └── Dockerfile          # Backend container configuration
-├── gen-studio-ui/          # React frontend application
+│   ├── index.tsx            # Main server file
+│   ├── romanService.tsx     # Roman numeral conversion logic
+│   ├── logger.js            # Winston logger configuration
+│   └── Dockerfile           # Backend container configuration
+├── frontend/                # React frontend application
 │   ├── src/
-│   │   ├── App.jsx         # Main React component
-│   │   └── main.jsx        # Application entry point
-│   └── Dockerfile          # Frontend container configuration
-├── docker-compose.yml      # Multi-service orchestration
-├── prometheus.yml          # Metrics collection configuration
-└── README.md              # Project documentation
+│   │   ├── App.tsx          # Main React component
+│   │   └── main.tsx         # Application entry point
+│   └── Dockerfile           # Frontend container configuration
+├── docker-compose.yml       # Multi-service orchestration
+└── README.md                # Project documentation
 ```
 
 ## 🛠️ Development
@@ -155,7 +155,6 @@ adobe-project/
 - Separation of concerns (frontend/backend)
 - RESTful API design
 - Containerization for deployment
-- Monitoring and observability
 - Error boundaries and graceful degradation
 
 ## 📝 License
