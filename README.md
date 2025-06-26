@@ -1,5 +1,8 @@
 # Roman Numeral Converter
 
+## 🚧 Work in Progress
+This project is under active development. Some features and tests may not be fully functional yet.
+
 A full-stack web application that converts Arabic numerals to Roman numerals, built with a React frontend and Node.js/Express backend. The project includes robust logging and error handling.
 
 ## 🏗️ Architecture
@@ -81,6 +84,8 @@ GET /romannumeral?query={number}
 - `CORS_ORIGIN`: Allowed frontend origin (default: http://localhost:5173)
 
 ## 🧪 Testing
+
+> **Note:** Some tests are currently failing. Test coverage and reliability are being improved as part of ongoing development.
 
 ### Frontend Testing
 The frontend uses [Vitest](https://vitest.dev/) and [Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for unit and integration tests.
