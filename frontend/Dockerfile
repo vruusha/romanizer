@@ -3,7 +3,6 @@
 # This Dockerfile creates a containerized environment for the Roman Numeral
 # Converter React frontend. It uses Node.js 20 Alpine for development.
 #
-# @author Interview Candidate
 # @version 1.0.0
 
 # Use Node.js 20 Alpine as the base image for smaller size and security

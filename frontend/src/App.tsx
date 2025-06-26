@@ -1,4 +1,4 @@
-/**
+/*
  * Roman Numeral Converter React Application
  * 
  * This React component provides a user interface for converting Arabic numerals
@@ -6,7 +6,6 @@
  * and integration with the backend API. Enhanced with comprehensive Sentry logging
  * and performance monitoring.
  * 
- * @author Interview Candidate
  * @version 1.0.0
  */
 

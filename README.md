@@ -168,4 +168,4 @@ This project is created for interview purposes and demonstrates modern full-stac
 
 ## 👨‍💻 Author
 
-Interview Candidate - Adobe Project 
+Adobe Project 

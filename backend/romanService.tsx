@@ -1,16 +1,15 @@
-/**
+/*
  * Roman Numeral Converter Service
  * 
  * This module provides functionality to convert Arabic numerals (1-3999) to Roman numerals.
  * It uses lookup arrays for efficient conversion by breaking down the number into
  * thousands, hundreds, tens, and units places.
  * 
- * @author Interview Candidate
  * @version 1.0.0
  */
 
 // Lookup arrays for Roman numeral conversion
-const ROMAN_THOUSANDS = ["", "M", "MM", "MMM"];
+const ROMAN_THOUSANDS : string[] = ["", "M", "MM", "MMM"];
 const ROMAN_HUNDREDS = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
 const ROMAN_TENS = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
 const ROMAN_UNITS = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
