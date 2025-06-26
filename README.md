@@ -133,7 +133,7 @@ curl "http://localhost:3001/romannumeral?query=0"
 ## 🏛️ Project Structure
 
 ```
-adobe-project/
+project-root/
 ├── backend/                 # Express.js API server
 │   ├── index.tsx            # Main server file
 │   ├── romanService.tsx     # Roman numeral conversion logic
@@ -167,5 +167,3 @@ adobe-project/
 This project is created for interview purposes and demonstrates modern full-stack development practices.
 
 ## 👨‍💻 Author
-
-Adobe Project 
